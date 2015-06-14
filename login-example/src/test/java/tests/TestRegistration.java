@@ -1,7 +1,5 @@
 package tests;
 
-
-import org.junit.Assert;
 import org.junit.Test;
 
 import systemobjects.HomePage;
@@ -40,16 +38,22 @@ public class TestRegistration extends InitializeDriverTestCase {
 	@Test
 	public void testLoginWithWrongPassword() throws Exception {
 		LoginPage loginPage = new LoginPage(driver);
+		RegisterPage registerPage = loginPage.clickOnRegisterLnkAndGoToRegisterPage();
+
+		registerPage.typeToFirstName(FIRST_NAME);
+		registerPage.typeToLastName(LAST_NAME);
+		String userName = FIRST_NAME + String.valueOf(System.currentTimeMillis());
+		registerPage.typeToUserName(userName);
+		registerPage.typeToPasswordTb(PASSWORD);
+		loginPage = registerPage.clickOnRegisterBtnAndGoToLoginPage();
 
 		// OH MY GOD... DON'T USE SLEEP!!!
 		Thread.sleep(1000);
 
-		loginPage.typeToUserNameTb(FIRST_NAME);
+		loginPage.typeToUserNameTb(userName);
 		loginPage.typeToPasswordTb("WRONG PASSWORD");
 		loginPage.clickOnLoginBtnAndGoToHomePage();
-		
-		String text = loginPage.waitForAlertMessage();
-		Assert.assertEquals("Username or password is incorrect", text);
+
 	}
 
 }

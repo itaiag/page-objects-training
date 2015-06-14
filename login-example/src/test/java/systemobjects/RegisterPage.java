@@ -38,9 +38,4 @@ public class RegisterPage extends AbstractPage {
 		return new LoginPage(driver);
 	}
 
-	public String waitForAlertMessage() {
-		WebDriverWait wait = new WebDriverWait(driver, 10);
-		WebElement alertElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("alert")));
-		return alertElement.getText();
-	}
 }
