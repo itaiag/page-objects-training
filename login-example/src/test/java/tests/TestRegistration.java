@@ -31,8 +31,8 @@ public class TestRegistration extends InitializeDriverTestCase {
 		loginPage.typeToPasswordTb(PASSWORD);
 		HomePage homePage = loginPage.clickOnLoginBtnAndGoToHomePage();
 
-		homePage.clickOnLogoutBtnAndGoToHomePage();
-
+		homePage.clickOnLogoutBtnAndGoToLoginPage();
+		
 	}
 
 	@Test
