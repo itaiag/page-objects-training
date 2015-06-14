@@ -18,6 +18,12 @@ public class LoginPage extends AbstractPage {
 	public LoginPage(WebDriver driver) {
 		super(driver);
 	}
+	
+	public HomePage doLogin(String userName, String password){
+		typeToUserNameTb(userName);
+		typeToPasswordTb(password);
+		return clickOnLoginBtnAndGoToHomePage();
+	}
 
 	public LoginPage typeToUserNameTb(String userName) {
 		driver.findElement(userNameBy).sendKeys(userName);

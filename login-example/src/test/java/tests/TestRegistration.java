@@ -20,23 +20,13 @@ public class TestRegistration extends InitializeDriverTestCase {
 				clickOnRegisterLnkAndGoToRegisterPage();
 
 		String userName = FIRST_NAME + String.valueOf(System.currentTimeMillis());
-		loginPage = registerPage.
-				typeToFirstName(FIRST_NAME).
-				typeToLastName(LAST_NAME).
-				typeToUserName(userName).
-				typeToPasswordTb(PASSWORD).
-				clickOnRegisterBtnAndGoToLoginPage();
+		loginPage = registerPage.doRegistration(FIRST_NAME, LAST_NAME, userName, PASSWORD);
 		
 
 		// OH MY GOD... DON'T USE SLEEP!!!
 		Thread.sleep(1000);
 
-		HomePage homePage = loginPage.
-				typeToUserNameTb(userName).
-				typeToPasswordTb(PASSWORD).
-				clickOnLoginBtnAndGoToHomePage();
-		
-
+		HomePage homePage = loginPage.doLogin(userName, PASSWORD);
 		homePage.clickOnLogoutBtnAndGoToHomePage();
 
 	}
