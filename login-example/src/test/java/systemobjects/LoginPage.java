@@ -17,12 +17,14 @@ public class LoginPage extends AbstractPage{
 		driver.findElement(By.id("password")).sendKeys(password);
 	}
 	
-	public void clickOnLoginBtn(){
+	public HomePage clickOnLoginBtn(){
 		driver.findElement(By.tagName("button")).click();
+		return new HomePage(driver);
 	}
 	
-	public void clickOnRegisterLnk(){
+	public RegisterPage clickOnRegisterLnk(){
 		driver.findElement(By.linkText("Register")).click();
+		return new RegisterPage(driver);
 	}
 	
 }

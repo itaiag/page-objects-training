@@ -25,11 +25,13 @@ public class RegisterPage extends AbstractPage {
 		driver.findElement(By.id("password")).sendKeys(password);
 	}
 
-	public void clickOnRegisterBtn() {
+	public LoginPage clickOnRegisterBtn() {
 		driver.findElement(By.tagName("button")).click();
+		return new LoginPage(driver);
 	}
 
-	public void clickOnCancelLnk() {
+	public LoginPage clickOnCancelLnk() {
 		driver.findElement(By.linkText("Cancel")).click();
+		return new LoginPage(driver);
 	}
 }
