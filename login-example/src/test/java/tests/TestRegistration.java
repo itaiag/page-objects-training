@@ -29,7 +29,8 @@ public class TestRegistration extends InitializeDriverTestCase {
 		driver.findElement(By.id("password")).sendKeys(PASSWORD);
 		driver.findElement(By.tagName("button")).click();
 
-		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//h1[text()='Hi "+FIRST_NAME+"!']")));
+		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By
+				.xpath("//h1[text()='Hi " + FIRST_NAME + "!']")));
 		driver.findElement(By.linkText("Logout")).click();
 
 	}
