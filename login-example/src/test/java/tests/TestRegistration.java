@@ -37,7 +37,7 @@ public class TestRegistration extends InitializeDriverTestCase {
 				clickOnLoginBtnAndGoToHomePage();
 		
 
-		homePage.clickOnLogoutBtnAndGoLoginPage();
+		homePage.clickOnLogoutBtnAndGoToLoginPage();
 
 	}
 
