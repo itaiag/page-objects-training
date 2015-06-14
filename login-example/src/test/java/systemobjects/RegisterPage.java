@@ -15,9 +15,11 @@ public class RegisterPage extends AbstractPage {
 	private By registerBtnBy = By.tagName("button");
 	private By cancelLnkBy = By.linkText("Cancel");
 	private By alertDivBy = By.className("alert");
+	private By titleHBy = By.xpath("//h2[text()='Register']");
 
 	public RegisterPage(WebDriver driver) {
 		super(driver);
+		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(titleHBy));
 	}
 	
 	public LoginPage doRegistration(String firstName, String lastName, String userName, String password){

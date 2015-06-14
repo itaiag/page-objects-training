@@ -21,10 +21,6 @@ public class TestRegistration extends InitializeDriverTestCase {
 
 		String userName = FIRST_NAME + String.valueOf(System.currentTimeMillis());
 		loginPage = registerPage.doRegistration(FIRST_NAME, LAST_NAME, userName, PASSWORD);
-		
-
-		// OH MY GOD... DON'T USE SLEEP!!!
-		Thread.sleep(1000);
 
 		HomePage homePage = loginPage.doLogin(userName, PASSWORD);
 		homePage.clickOnLogoutBtnAndGoToHomePage();

@@ -17,6 +17,7 @@ public class LoginPage extends AbstractPage {
 
 	public LoginPage(WebDriver driver) {
 		super(driver);
+		wait.until(ExpectedConditions.titleContains("AngularJS User Registration"));
 	}
 	
 	public HomePage doLogin(String userName, String password){
