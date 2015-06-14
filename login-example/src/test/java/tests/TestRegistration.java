@@ -16,23 +16,22 @@ public class TestRegistration extends InitializeDriverTestCase {
 	public void testRegisterAndLogin() throws Exception {
 		LoginPage loginPage = new LoginPage(driver);
 		RegisterPage registerPage = loginPage.clickOnRegisterLnk();
-		
+
 		registerPage.typeToFirstName(FIRST_NAME);
 		registerPage.typeToLastName(LAST_NAME);
 		String userName = FIRST_NAME + String.valueOf(System.currentTimeMillis());
 		registerPage.typeToUserName(userName);
 		registerPage.typeToPasswordTb(PASSWORD);
 		loginPage = registerPage.clickOnRegisterBtn();
-		
-		//OH MY GOD... DON'T USE SLEEP!!!
+
+		// OH MY GOD... DON'T USE SLEEP!!!
 		Thread.sleep(1000);
-		
+
 		loginPage.typeToUserNameTb(userName);
 		loginPage.typeToPasswordTb(PASSWORD);
 		HomePage homePage = loginPage.clickOnLoginBtn();
-				
+
 		homePage.clickOnLogoutBtn();
-		
 
 	}
 

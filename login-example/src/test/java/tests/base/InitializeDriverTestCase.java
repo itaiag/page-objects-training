@@ -8,11 +8,11 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public abstract class InitializeDriverTestCase extends LaunchServerTestCase{
-	
+public abstract class InitializeDriverTestCase extends LaunchServerTestCase {
+
 	protected WebDriver driver;
 	protected WebDriverWait wait;
-	
+
 	@Before
 	public void setUp() {
 		driver = new FirefoxDriver();
@@ -21,7 +21,7 @@ public abstract class InitializeDriverTestCase extends LaunchServerTestCase{
 		driver.manage().window().maximize();
 		wait = new WebDriverWait(driver, 30);
 	}
-	
+
 	@After
 	public void tearDown() {
 		if (driver != null) {
