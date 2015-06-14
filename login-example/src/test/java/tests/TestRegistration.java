@@ -27,7 +27,7 @@ public class TestRegistration extends InitializeDriverTestCase {
 		Thread.sleep(1000);
 
 		HomePage homePage = loginPage.doLogin(userName, PASSWORD);
-		homePage.clickOnLogoutBtnAndGoToHomePage();
+		homePage.clickOnLogoutBtnAndGoLoginPage();
 
 	}
 
