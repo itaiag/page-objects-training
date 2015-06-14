@@ -25,7 +25,7 @@ public class RegisterPage extends AbstractPage {
 		driver.findElement(By.id("password")).sendKeys(password);
 	}
 
-	public LoginPage clickOnRegisterBtn() {
+	public LoginPage clickOnRegisterBtnAndGoToLoginPage() {
 		driver.findElement(By.tagName("button")).click();
 		return new LoginPage(driver);
 	}
