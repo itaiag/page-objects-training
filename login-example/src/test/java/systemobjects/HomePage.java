@@ -14,9 +14,9 @@ public class HomePage extends AbstractPage {
 		wait.until(ExpectedConditions.textToBePresentInElementLocated(titleHBy, "Hi"));
 	}
 
-	public HomePage clickOnLogoutBtnAndGoToHomePage() {
+	public LoginPage clickOnLogoutBtnAndGoToLoginPage() {
 		driver.findElement(logoutLnkBy).click();
-		return new HomePage(driver);
+		return new LoginPage(driver);
 	}
 
 }

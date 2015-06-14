@@ -23,7 +23,7 @@ public class TestRegistration extends InitializeDriverTestCase {
 		loginPage = registerPage.doRegistration(FIRST_NAME, LAST_NAME, userName, PASSWORD);
 
 		HomePage homePage = loginPage.doLogin(userName, PASSWORD);
-		homePage.clickOnLogoutBtnAndGoToHomePage();
+		homePage.clickOnLogoutBtnAndGoToLoginPage();
 
 	}
 
