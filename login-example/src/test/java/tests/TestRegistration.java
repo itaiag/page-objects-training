@@ -26,7 +26,8 @@ public class TestRegistration extends InitializeDriverTestCase {
 		driver.findElement(By.id("username")).sendKeys(userName);
 		driver.findElement(By.id("password")).sendKeys(password);
 		driver.findElement(By.tagName("button")).click();
-		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//h1[text()='Hi "+FIRST_NAME+"!']")));
+		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By
+				.xpath("//h1[text()='Hi " + FIRST_NAME + "!']")));
 	}
 
 	private String registerNewUser(String firstName, String lastName, String password) {
