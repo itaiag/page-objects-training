@@ -19,12 +19,14 @@ public class LoginPage extends AbstractPage {
 		super(driver);
 	}
 
-	public void typeToUserNameTb(String userName) {
+	public LoginPage typeToUserNameTb(String userName) {
 		driver.findElement(userNameBy).sendKeys(userName);
+		return this;
 	}
 
-	public void typeToPasswordTb(String password) {
+	public LoginPage typeToPasswordTb(String password) {
 		driver.findElement(passwordBy).sendKeys(password);
+		return this;
 	}
 
 	public HomePage clickOnLoginBtnAndGoToHomePage() {
@@ -32,8 +34,9 @@ public class LoginPage extends AbstractPage {
 		return new HomePage(driver);
 	}
 
-	public void clickOnLoginBtnAndDoNotLogin() {
+	public LoginPage clickOnLoginBtnAndDoNotLogin() {
 		driver.findElement(loginBtnBy).click();
+		return this;
 	}
 
 	public RegisterPage clickOnRegisterLnkAndGoToRegisterPage() {

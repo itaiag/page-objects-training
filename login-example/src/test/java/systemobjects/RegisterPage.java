@@ -20,20 +20,24 @@ public class RegisterPage extends AbstractPage {
 		super(driver);
 	}
 
-	public void typeToFirstName(String firstName) {
+	public RegisterPage typeToFirstName(String firstName) {
 		driver.findElement(firstNameTbBy).sendKeys(firstName);
+		return this;
 	}
 
-	public void typeToLastName(String lastName) {
+	public RegisterPage typeToLastName(String lastName) {
 		driver.findElement(lastNameTbBy).sendKeys(lastName);
+		return this;
 	}
 
-	public void typeToUserName(String userName) {
+	public RegisterPage typeToUserName(String userName) {
 		driver.findElement(userNameTbBy).sendKeys(userName);
+		return this;
 	}
 
-	public void typeToPasswordTb(String password) {
+	public RegisterPage typeToPasswordTb(String password) {
 		driver.findElement(passwordTbBy).sendKeys(password);
+		return this;
 	}
 
 	public LoginPage clickOnRegisterBtnAndGoToLoginPage() {
