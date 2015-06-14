@@ -37,9 +37,9 @@ public class RegisterPage extends AbstractPage {
 		driver.findElement(By.linkText("Cancel")).click();
 		return new LoginPage(driver);
 	}
-	
-	public String waitForAlertMessage(){
-		WebDriverWait wait = new WebDriverWait(driver,10);
+
+	public String waitForAlertMessage() {
+		WebDriverWait wait = new WebDriverWait(driver, 10);
 		WebElement alertElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("alert")));
 		return alertElement.getText();
 	}
