@@ -7,36 +7,43 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class LoginPage extends AbstractPage {
+	
+	private By userNameBy = By.id("username");
+	private By passwordBy = By.id("password");
+	private By loginBtnBy = By.tagName("button");
+	private By registerLnkBy = By.linkText("Register");
+	private By alertDivBy = By.className("alert");
+	
 
 	public LoginPage(WebDriver driver) {
 		super(driver);
 	}
 
 	public void typeToUserNameTb(String userName) {
-		driver.findElement(By.id("username")).sendKeys(userName);
+		driver.findElement(userNameBy).sendKeys(userName);
 	}
 
 	public void typeToPasswordTb(String password) {
-		driver.findElement(By.id("password")).sendKeys(password);
+		driver.findElement(passwordBy).sendKeys(password);
 	}
 
 	public HomePage clickOnLoginBtnAndGoToHomePage() {
-		driver.findElement(By.tagName("button")).click();
+		driver.findElement(loginBtnBy).click();
 		return new HomePage(driver);
 	}
 
 	public void clickOnLoginBtnAndDoNotLogin() {
-		driver.findElement(By.tagName("button")).click();
+		driver.findElement(loginBtnBy).click();
 	}
 
 	public RegisterPage clickOnRegisterLnkAndGoToRegisterPage() {
-		driver.findElement(By.linkText("Register")).click();
+		driver.findElement(registerLnkBy).click();
 		return new RegisterPage(driver);
 	}
 
 	public String waitForAlertMessage() {
 		WebDriverWait wait = new WebDriverWait(driver, 10);
-		WebElement alertElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("alert")));
+		WebElement alertElement = wait.until(ExpectedConditions.visibilityOfElementLocated(alertDivBy));
 		return alertElement.getText();
 	}
 

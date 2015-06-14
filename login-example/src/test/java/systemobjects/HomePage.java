@@ -4,13 +4,15 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class HomePage extends AbstractPage {
+	
+	private By logoutLnkBy = By.linkText("Logout");
 
 	public HomePage(WebDriver driver) {
 		super(driver);
 	}
 
 	public HomePage clickOnLogoutBtnAndGoToHomePage() {
-		driver.findElement(By.linkText("Logout")).click();
+		driver.findElement(logoutLnkBy).click();
 		return new HomePage(driver);
 	}
 
