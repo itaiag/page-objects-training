@@ -2,6 +2,9 @@ package systemobjects;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class RegisterPage extends AbstractPage {
 
@@ -33,5 +36,11 @@ public class RegisterPage extends AbstractPage {
 	public LoginPage clickOnCancelLnk() {
 		driver.findElement(By.linkText("Cancel")).click();
 		return new LoginPage(driver);
+	}
+	
+	public String waitForAlertMessage(){
+		WebDriverWait wait = new WebDriverWait(driver,10);
+		WebElement alertElement = wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("alert")));
+		return alertElement.getText();
 	}
 }
