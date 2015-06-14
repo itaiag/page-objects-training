@@ -6,7 +6,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import tests.base.InitializeDriverTestCase;
 
-public class Test2 extends InitializeDriverTestCase {
+public class TestRegistration extends InitializeDriverTestCase {
 	private static final String FIRST_NAME = "Itai";
 	private static final String LAST_NAME = "Agmon";
 	private static final String PASSWORD = "s3cret";
