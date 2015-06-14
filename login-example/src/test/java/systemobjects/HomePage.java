@@ -9,9 +9,9 @@ public class HomePage extends AbstractPage {
 		super(driver);
 	}
 
-	public HomePage clickOnLogoutBtnAndGoToHomePage() {
+	public LoginPage clickOnLogoutBtnAndGoToLoginPage() {
 		driver.findElement(By.linkText("Logout")).click();
-		return new HomePage(driver);
+		return new LoginPage(driver);
 	}
 
 }
