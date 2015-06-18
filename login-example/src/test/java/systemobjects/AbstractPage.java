@@ -5,12 +5,15 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 public abstract class AbstractPage {
 
-	protected WebDriver driver;
-	protected WebDriverWait wait;
+	protected final WebDriver driver;
+	protected final WebDriverWait wait;
+	protected final ActionBot actionBot;
+	
 
-	public AbstractPage(WebDriver driver) {
+	public AbstractPage(final WebDriver driver) {
 		this.driver = driver;
 		wait = new WebDriverWait(driver,30);
+		actionBot = new ActionBot(driver);
 	}
 
 }

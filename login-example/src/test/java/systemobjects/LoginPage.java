@@ -27,27 +27,27 @@ public class LoginPage extends AbstractPage {
 	}
 
 	public LoginPage typeToUserNameTb(String userName) {
-		driver.findElement(userNameBy).sendKeys(userName);
+		actionBot.sendKeysToElementLocatedBy(userNameBy, userName);
 		return this;
 	}
 
 	public LoginPage typeToPasswordTb(String password) {
-		driver.findElement(passwordBy).sendKeys(password);
+		actionBot.sendKeysToElementLocatedBy(passwordBy, password);
 		return this;
 	}
 
 	public HomePage clickOnLoginBtnAndGoToHomePage() {
-		driver.findElement(loginBtnBy).click();
+		actionBot.clickOnElementLocatedBy(loginBtnBy);
 		return new HomePage(driver);
 	}
 
 	public LoginPage clickOnLoginBtnAndDoNotLogin() {
-		driver.findElement(loginBtnBy).click();
+		actionBot.clickOnElementLocatedBy(loginBtnBy);
 		return this;
 	}
 
 	public RegisterPage clickOnRegisterLnkAndGoToRegisterPage() {
-		driver.findElement(registerLnkBy).click();
+		actionBot.clickOnElementLocatedBy(registerLnkBy);
 		return new RegisterPage(driver);
 	}
 
